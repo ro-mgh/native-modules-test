@@ -1,5 +1,7 @@
 # react-native-rm-text-module
+
 basic text module
+
 ## Installation
 
 ```sh
@@ -9,16 +11,17 @@ npm install react-native-rm-text-module
 ## Usage
 
 ```js
-import { multiply } from "react-native-rm-text-module";
+import { changeText } from 'react-native-rm-text-module';
 
 // ...
 
-const result = await multiply(3, 7);
+const handleButtonPress = () => {
+  changeText('new text', (newText: string) => {
+    console.log('Hey from native side!!');
+    setValue(newText);
+  });
+};
 ```
-
-## Contributing
-
-See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
 
 ## License
 

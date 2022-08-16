@@ -7,17 +7,13 @@
 @implementation RmTextModule
 RCT_EXPORT_MODULE()
 
-// Example method
-// See // https://reactnative.dev/docs/native-modules-ios
-RCT_REMAP_METHOD(multiply,
-                 multiplyWithA:(double)a withB:(double)b
-                 withResolver:(RCTPromiseResolveBlock)resolve
-                 withRejecter:(RCTPromiseRejectBlock)reject)
+RCT_REMAP_METHOD(changeText,
+                 (NSString *) newText
+                 myCallback:(RCTResponseSenderBlock)callback)
 {
-  NSNumber *result = @(a * b);
-
-  resolve(result);
+  callback(@[@(newText)])
 }
+
 
 // Don't compile this code when we build for the old architecture.
 #ifdef RCT_NEW_ARCH_ENABLED
